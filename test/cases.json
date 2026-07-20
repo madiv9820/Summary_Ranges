@@ -1,0 +1,289 @@
+[
+  {
+    "title": "🟢 Multiple Consecutive Ranges",
+    "input": {
+      "nums": [0, 1, 2, 4, 5, 7]
+    },
+    "output": [
+      "0->2",
+      "4->5",
+      "7"
+    ],
+    "description": "🚀 Compress multiple consecutive number streaks into compact ranges."
+  },
+  {
+    "title": "🔵 Mixed Single Numbers and Ranges",
+    "input": {
+      "nums": [0, 2, 3, 4, 6, 8, 9]
+    },
+    "output": [
+      "0",
+      "2->4",
+      "6",
+      "8->9"
+    ],
+    "description": "🧩 Handles isolated numbers along with consecutive sequences."
+  },
+  {
+    "title": "🟣 Empty Number List",
+    "input": {
+      "nums": []
+    },
+    "output": [],
+    "description": "📭 Returns an empty range list when no numbers are provided."
+  },
+  {
+    "title": "🟡 Single Number Range",
+    "input": {
+      "nums": [5]
+    },
+    "output": [
+      "5"
+    ],
+    "description": "🎯 Converts a single element into a standalone range."
+  },
+  {
+    "title": "🟠 All Numbers Are Consecutive",
+    "input": {
+      "nums": [1, 2, 3, 4, 5, 6]
+    },
+    "output": [
+      "1->6"
+    ],
+    "description": "🔥 Merges the complete array into one continuous range."
+  },
+  {
+    "title": "🔴 No Consecutive Numbers",
+    "input": {
+      "nums": [1, 3, 5, 7, 9]
+    },
+    "output": [
+      "1",
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "description": "🎯 Keeps every number separate when no consecutive streak exists."
+  },
+  {
+    "title": "🟢 Consecutive Numbers at Start",
+    "input": {
+      "nums": [1, 2, 3, 7, 8, 10]
+    },
+    "output": [
+      "1->3",
+      "7->8",
+      "10"
+    ],
+    "description": "🚀 Detects ranges beginning from the first array elements."
+  },
+  {
+    "title": "🔵 Large Integer Values",
+    "input": {
+      "nums": [-2147483648, -2147483647, -2147483646, 0]
+    },
+    "output": [
+      "-2147483648->-2147483646",
+      "0"
+    ],
+    "description": "💪 Handles ranges containing extreme integer values."
+  },
+  {
+    "title": "🟣 Two Element Consecutive Range",
+    "input": {
+      "nums": [10, 11]
+    },
+    "output": [
+      "10->11"
+    ],
+    "description": "🔗 Creates a range from a simple consecutive pair."
+  },
+  {
+    "title": "🟡 Consecutive Ranges With Multiple Gaps",
+    "input": {
+      "nums": [-3, -2, -1, 2, 3, 5, 6, 7]
+    },
+    "output": [
+      "-3->-1",
+      "2->3",
+      "5->7"
+    ],
+    "description": "🗺️ Separates multiple streaks divided by missing numbers."
+  },
+  {
+    "title": "🟢 Entire Array As Single Range",
+    "input": {
+      "nums": [10, 11, 12, 13, 14, 15, 16]
+    },
+    "output": [
+      "10->16"
+    ],
+    "description": "🔥 Combines a fully consecutive array into one compressed range."
+  },
+  {
+    "title": "🔵 Alternating Single Numbers",
+    "input": {
+      "nums": [2, 4, 6, 8, 10]
+    },
+    "output": [
+      "2",
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    "description": "🎯 Keeps every value separate when no consecutive numbers exist."
+  },
+  {
+    "title": "🟣 Negative Number Sequence",
+    "input": {
+      "nums": [-5, -4, -3, -2, -1]
+    },
+    "output": [
+      "-5->-1"
+    ],
+    "description": "❄️ Handles consecutive ranges containing negative integers."
+  },
+  {
+    "title": "🟡 Negative And Positive Mix",
+    "input": {
+      "nums": [-5, -4, -2, -1, 0, 1, 5]
+    },
+    "output": [
+      "-5->-4",
+      "-2->1",
+      "5"
+    ],
+    "description": "🌍 Groups consecutive values across negative and positive boundaries."
+  },
+  {
+    "title": "🟠 Long Range With Small Gaps",
+    "input": {
+      "nums": [1, 2, 3, 5, 6, 8, 9, 10, 11]
+    },
+    "output": [
+      "1->3",
+      "5->6",
+      "8->11"
+    ],
+    "description": "🧩 Splits numbers into multiple compact ranges separated by gaps."
+  },
+  {
+    "title": "🔴 Large Gap Between Ranges",
+    "input": {
+      "nums": [1, 2, 3, 100, 101, 102]
+    },
+    "output": [
+      "1->3",
+      "100->102"
+    ],
+    "description": "🌉 Detects separate ranges with large missing intervals."
+  },
+  {
+    "title": "🟢 Consecutive Pair Followed By Singles",
+    "input": {
+      "nums": [20, 21, 25, 30, 35]
+    },
+    "output": [
+      "20->21",
+      "25",
+      "30",
+      "35"
+    ],
+    "description": "🔗 Identifies small consecutive groups mixed with isolated values."
+  },
+  {
+    "title": "🔵 Range Starting From Minimum Integer",
+    "input": {
+      "nums": [-2147483648, -2147483647]
+    },
+    "output": [
+      "-2147483648->-2147483647"
+    ],
+    "description": "💪 Validates handling of the smallest possible integer values."
+  },
+  {
+    "title": "🟣 Range Ending At Maximum Integer",
+    "input": {
+      "nums": [2147483646, 2147483647]
+    },
+    "output": [
+      "2147483646->2147483647"
+    ],
+    "description": "🚀 Validates handling of the largest possible integer values."
+  },
+  {
+    "title": "🟡 Multiple Small Ranges",
+    "input": {
+      "nums": [1, 2, 5, 6, 9, 10, 13]
+    },
+    "output": [
+      "1->2",
+      "5->6",
+      "9->10",
+      "13"
+    ],
+    "description": "📦 Creates multiple compact ranges from small consecutive groups."
+  },
+  {
+    "title": "🟠 Single Element At Large Value",
+    "input": {
+      "nums": [999999999]
+    },
+    "output": [
+      "999999999"
+    ],
+    "description": "🎯 Handles a single large integer correctly."
+  },
+  {
+    "title": "🔴 Empty Input Handling",
+    "input": {
+      "nums": []
+    },
+    "output": [],
+    "description": "📭 Returns no ranges when the input array is empty."
+  },
+  {
+    "title": "🟢 Almost Complete Sequence",
+    "input": {
+      "nums": [1, 2, 3, 4, 6, 7, 8, 9]
+    },
+    "output": [
+      "1->4",
+      "6->9"
+    ],
+    "description": "🛤️ Splits a nearly continuous sequence around a missing number."
+  },
+  {
+    "title": "🔵 Three Consecutive Blocks",
+    "input": {
+      "nums": [1, 2, 3, 10, 11, 12, 20, 21]
+    },
+    "output": [
+      "1->3",
+      "10->12",
+      "20->21"
+    ],
+    "description": "🗺️ Detects multiple independent consecutive blocks."
+  },
+  {
+    "title": "🟣 Full Constraint Size Input",
+    "input": {
+      "nums": [1, 2, 3, 5, 7, 8, 9, 12, 15, 16, 17, 20, 22, 23, 24, 30, 31, 35, 40, 41]
+    },
+    "output": [
+      "1->3",
+      "5",
+      "7->9",
+      "12",
+      "15->17",
+      "20",
+      "22->24",
+      "30->31",
+      "35",
+      "40->41"
+    ],
+    "description": "🏆 Tests maximum input size with multiple range patterns."
+  }
+]
