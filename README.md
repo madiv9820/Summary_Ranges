@@ -56,3 +56,84 @@ For every discovered range:
 Become the **Range Detective 🕵️‍♂️** and transform a scattered collection of numbers into the most compact range map 🗺️. Find all hidden consecutive streaks 🔥, merge them into meaningful ranges 🔗, and create the cleanest representation possible ✨.
 
 ---
+### 🗺️ Solution Explanation: Single Pass Range Compression 🚀
+#### 💡 Intuition
+Since the given array **`nums`** is already ***sorted in ascending order*** 📈 and contains ***unique values*** 🔢, all consecutive numbers will naturally appear next to each other.
+
+Instead of checking every possible range, we can scan the array once and build ranges as we go:
+- 🎯 Start a new range from the current number.
+- 🔗 Keep extending the range while the next number is exactly **`previous + 1`**.
+- 🏷️ Once the consecutive sequence breaks, store the range.
+- 🚶 Continue from the next unexplored number.
+
+This allows us to compress the array into the ***smallest possible list of ranges*** efficiently.
+
+#### 🪜 Steps
+1. 📋 Create an empty list to store the summarized ranges.
+2. 🚶 Traverse the array using a pointer:
+    - Treat the current number as the start of a new range.
+    - Initialize the end of the range with the same number.
+3. 🔍 Check the following numbers:
+    - If the next number is consecutive, extend the current range.
+    - Continue until a gap is found.
+4. 🏷️ Format the discovered range:
+    - If start and end are the same:
+        - Add **`"number"`**
+    - Otherwise:
+        - Add **`"start->end"`**
+5. 🔄 Move the pointer to the first number after the current range.
+6. ✅ Return the list of compressed ranges.
+
+#### 📝 Pseudocode
+```
+function summaryRanges(nums):
+
+    create empty list summarized_ranges
+
+    set current_position = 0
+
+    while current_position < length(nums):
+
+        range_start = nums[current_position]
+        range_end = range_start
+
+        next_position = current_position + 1
+
+        while next_position < length(nums)
+              AND nums[next_position] == range_end + 1:
+
+            range_end = nums[next_position]
+            next_position += 1
+
+        if range_start == range_end:
+            add range_start to summarized_ranges
+        else:
+            add range_start + "->" + range_end to summarized_ranges
+
+        current_position = next_position
+
+    return summarized_ranges
+```
+
+#### ⏱️ Time Complexity `O(n)` 🚀
+- Each number is visited only once.
+- The inner loop does not restart from the beginning; it only moves forward.
+- Total operations are proportional to the size of the array.
+
+#### 💾 Space Complexity 
+- **`O(1)` 🪶 (excluding output)**
+    - Only a few variables are used:
+        - **`range_start`**
+        - **`range_end`**
+        - **`current_position`**
+        - **`next_position`**
+
+- The output list requires: **`O(k)` 📦**, where **`k`** is the number of generated ranges.
+
+#### 🏆 Why This Approach Is Optimal?
+✅ Uses the sorted property of the input <br>
+✅ Processes each element only once <br>
+✅ Avoids unnecessary searching or extra data structures <br>
+✅ Achieves the best possible time complexity: O(n) 🔥 <br>
+
+---
